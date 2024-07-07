@@ -1,15 +1,21 @@
 import React,{useState} from "react";
-import Numero from "./componentes/Numero";
+import Led from "./components/Led";
 import './css/App.css';
 
 export default function App(){
 
-  const [num,setNum] = useState(10);
+  const [ligado,setLigado] = useState(false);
+
+  const cancelar =(obj)=>{
+    return obj.preventDefault();
+  };
 
   return(
     <>
-      <p>Valor do state num em App: {num}</p>
-      <Numero num={num} setNum={setNum}/>
+      <Led ligado={ligado} setLigado={setLigado}/>
+      <a href="http://youtube.com/cfbcursos" target="_blank" onClick={el=>cancelar(el)}>
+        CFB Cursos
+      </a>
     </>
   );
 };

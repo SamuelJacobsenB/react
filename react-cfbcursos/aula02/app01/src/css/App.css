@@ -1,22 +1,5 @@
-.caixa {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.texto {
-  color: green;
-  font-size: 2em;
-}
-
-.caixa > a {
-  font-size: 1em;
-  color: aqua;
-  text-decoration: none;
-}
-
-.caixa > a:hover {
-  background-color: white;
-  color: blue;
+.img_button {
+  width: 100px;
+  height: 100px;
+  margin: 50px;
 }
