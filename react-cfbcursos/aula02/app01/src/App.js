@@ -1,24 +1,15 @@
-import React from "react";
-import Relogio from "./componentes/Relogio";
+import React,{useState} from "react";
+import Numero from "./componentes/Numero";
 import './css/App.css';
 
 export default function App(){
 
-  const textoDestaque = {
-    color: 'blue',
-    fontSize: '3em',
-    textDecoration: 'underline'
-  };
+  const [num,setNum] = useState(10);
 
   return(
     <>
-      <section className="caixa">
-        <Relogio/>
-        <h1 style={{color: 'red',fontSize: '5em'}}>CFB Cursos</h1>
-        <h2 style={textoDestaque}>Curso de React</h2>
-        <p className="texto">Aprendendo React!!!</p>
-        <a href="#">Link</a>
-      </section>
+      <p>Valor do state num em App: {num}</p>
+      <Numero num={num} setNum={setNum}/>
     </>
   );
 };
