@@ -1,64 +1,33 @@
-import React,{useState} from "react";
+import React from "react";
 import './css/App.css';
 
 export default function App(){
 
-  // const [log,setLog] = useState(false);
+  const carros = [
+    {categoria: 'Utilitário', preco: '100000.00', modelo: 'Hillux'},
+    {categoria: 'Esportivo', preco: '180000.00', modelo: 'Golf GTI'},
+    {categoria: 'Utilitário', preco: '80000.00', modelo: 'RAM'},
+    {categoria: 'SUV', preco: '75000.00', modelo: 'T-Cross'},
+    {categoria: 'Esportivo', preco: '359000.00', modelo: 'Camaro'},
+    {categoria: 'Utilitário', preco: '55000.00', modelo: 'Fiat-Uno'}
+  ];
 
-  // const msgLogin =()=>{
-  //   return 'Usuário logado';
-  // };
-
-  // const msgLogOff =()=>{
-  //   return 'Favor logar';
-  // };
-
-  // const cumprimento =()=>{
-  //   const hora = new Date().getHours();
-  //   if(hora >= 0 && hora < 13){
-  //     return <p>Bom dia</p>
-  //   } else if(hora >= 13 && hora < 18){
-  //     return <p>Boa tarde</p>
-  //   } else {
-  //     return <p>Boa noite</p>
-  //   };
-  // };
-
-  // {cumprimento()}
-  // <p>{log?msgLogin():msgLogOff()}</p>
-  // <button onClick={()=>setLog(!log)}>
-  //   {log?'Logoff':'Login'}
-  // </button>
-
-  const [cor,setCor] = useState(1);
-
-  const vermelho = {color: 'red'};
-  const verde = {color: 'green'};
-  const azul = {color: 'blue'};
-
-  const retCor =(c)=>{
-    if(c==1){
-      return vermelho
-    } else if(c==2){
-      return verde
-    } else {
-      return azul
-    };
-  };
-
-  const mudaCor =()=>{
-    setCor(cor+1);
-    if(cor > 2) {
-      setCor(1);
-    };
-  };
-
-  setInterval(mudaCor,1000);
+  const listaCarros = carros.map( 
+    (el, i)=>
+       <li>
+        <h3>Modelo: {el.modelo}</h3>
+        <p>Categoria: {el.categoria}</p>
+        <strong>Preço: {el.preco}</strong>
+        <hr/>
+       </li> 
+  );
 
   return(
     <>
-      <h1 style={retCor(cor)}>Aprendendo React</h1>
-      {/* <button onClick={()=>mudaCor()}>Mudar cor</button> */}
+      <h1>Carros:</h1>
+      <ul>
+        {listaCarros}
+      </ul>
     </>
   );
 };
