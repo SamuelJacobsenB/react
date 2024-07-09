@@ -5,7 +5,7 @@ export default function Nota(props){
         <div>
             <label>Informe a nota {props.num}:</label>
             <br/>
-            <input type="text" name="" value={props.nota} onChange={(el)=>props.setNota(el.target.value)}/>
+            <input type="text" name={props.nome} value={props.nota} onChange={(el)=>props.setNota(el.target.value)}/>
             <hr/>
         </div>
     );
