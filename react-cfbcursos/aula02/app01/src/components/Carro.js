@@ -13,8 +13,17 @@ class Carro extends React.Component {
     };
 
     ligarDesligar(){
-        this.setState({ligado: !this.state.ligado});
+        //this.setState({ligado: !this.state.ligado});
+        this.setState((state)=>({
+            ligado: !state.ligado
+        }));
     };
+    acelerar(){
+        this.setState((state,props)=>({
+            velAtual: state.velAtual + props.fator
+        }));
+    };
+
 
     render(){
         return(
@@ -24,6 +33,7 @@ class Carro extends React.Component {
                 <p>Ligado: {this.state.ligado ? 'Sim' : 'Não'}</p>
                 <p>Velocidade atual: {this.state.velAtual}</p>
                 <button onClick={()=>this.ligarDesligar()}>{this.state.ligado == true ? 'Desligar carro' : 'Ligar carro'}</button>
+                <button onClick={()=>this.acelerar()}>Acelerar</button>
             </div>
         );
     };
