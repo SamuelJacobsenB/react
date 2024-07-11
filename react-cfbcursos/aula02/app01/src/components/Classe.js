@@ -9,7 +9,7 @@ class Classe extends React.Component {
     render(){
         return(
             <div>
-                <h1>Primeiro componente de classe...</h1>
+                <h1>Meu carro</h1>
                 <p>Canal: {this.props.canal}</p>
             </div>
 

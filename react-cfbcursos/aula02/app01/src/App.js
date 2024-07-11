@@ -1,5 +1,5 @@
 import React from "react";
-import Classe from "./components/Classe";
+import Carro from "./components/Carro";
 import './css/App.css';
 
 export default function App(){
@@ -7,7 +7,7 @@ export default function App(){
   return(
     <>  
       <h1>Olá</h1>
-      <Classe canal='CFB Cursos'/>
+      <Carro/>
     </>
   );
 };
